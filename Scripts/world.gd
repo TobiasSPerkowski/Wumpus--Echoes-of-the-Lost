@@ -17,9 +17,6 @@ func _ready():
 	$Map.load_from_file(map_path)
 	_init_player()
 	
-	#_set_scale()
-	RenderingServer.set_default_clear_color(Color.BLACK)
-	
 	$Player.arrows += num_arrows
 	$Advisor.got_arrows(num_arrows)
 	status = GameStatus.PLAYING
