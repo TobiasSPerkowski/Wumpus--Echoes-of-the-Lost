@@ -34,25 +34,32 @@ func _on_quit_pressed():
 
 func _show_maps():
 	var dir = DirAccess.open(maps_path)
-	
 	if dir == null:
 		return
-	
+
+	var maps := []
+
+	# lendo diretorio
 	dir.list_dir_begin()
-	
 	var map_file = dir.get_next()
-	
 	while map_file != "":
-		_add_map_button(map_file)
+		if !dir.current_is_dir():
+			maps.append(map_file)
 		map_file = dir.get_next()
-	
 	dir.list_dir_end()
+
+	maps.sort()
+
+	# adicionando a UI
+	for map in maps:
+		_add_map_button(map)
 
 
 func _add_map_button(map_file: String):
 	var button = Button.new()
 	
-	button.text = map_file.get_basename()
+	button.text = "  " + map_file.get_basename()
+	button.alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	button.add_theme_font_size_override("font_size", 18)
 	button.pressed.connect(_on_map_selected.bind(map_file))
 	

@@ -45,12 +45,11 @@ func _input(event: InputEvent):
 			if $Player.shoot_arrow():
 				var scream = $Map.shot_hit($Player.dir)
 				$Advisor.player_shot(scream)
-			else:
-				print("NO MORE ARROWS")  
+		
 		elif event.is_action_pressed("hint"):
 			_get_hint()
 	
-	elif event.is_action_pressed("exit"):
+	if event.is_action_pressed("exit"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 

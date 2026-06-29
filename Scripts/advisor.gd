@@ -1,7 +1,7 @@
 extends Node
 class_name Advisor
 
-var exec_path = ProjectSettings.globalize_path("res://Advisor/advisor")
+var exec_path = ProjectSettings.globalize_path("res://./advisor")
 var process
 
 func _ready():
