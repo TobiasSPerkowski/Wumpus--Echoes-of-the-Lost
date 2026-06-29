@@ -35,23 +35,33 @@ Mas, caso deseje compilar o projeto, siga o passo a passo abaixo.
 ### 1. Instalar Dependências
 
 Instale o PySAT com 
-```pip install python-sat```
+```bash
+pip install python-sat
+```
 Instale o PyInstaller com
-```pip install pyinstaller```
+```bash
+pip install pyinstaller
+```
 Os pacotes devem ser instalados system-wide. Caso ocorrer o erro **externally-managed-environment**, use
-```--break-system-packages```
+```bash
+--break-system-packages
+```
 Instale o Godot versão 4.6.3-stable, disponível em https://godotengine.org/download/archive/4.6.3-stable/
 
 ### 2. Clonar o repositório
 
 Clone o repositório com
-```git clone https://github.com/TobiasSPerkowski/wumpus_world_godot.git```
+```bash
+git clone https://github.com/TobiasSPerkowski/wumpus_world_godot.git
+```
 ou baixe o ZIP
 
 ### 3. Compilar o conselheiro
 
 Dentro do diretório do projeto, execute
-```pyinstaller --onefile advisor.py```
+```bash
+pyinstaller --onefile advisor.py
+```
 O executável ("advisor") poderá ser encontrado no diretório "dist".
 
 ### 4. Exportar
